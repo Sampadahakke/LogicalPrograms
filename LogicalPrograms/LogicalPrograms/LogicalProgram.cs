@@ -8,28 +8,19 @@ namespace LogicalPrograms
 {
     internal class LogicalProgram
     {
-        public void PrimeNumber()
+        public void ReverseNumber()
         {
-            int Count=0;    
-            Console.WriteLine("Enter the number");
-            int Number = Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i<=Number; i++)
+            int Reminder=0;
+            int ReverseNmuber=0;
+            Console.Write("Enter the number = ");
+            int Number=Convert.ToInt32(Console.ReadLine());
+            while(Number>0)
             {
-                if (Number % i == 0)
-                {
-                    
-                    Count++;
-                }
+                Reminder=Number%10;
+                ReverseNmuber=(ReverseNmuber*10+Reminder);
+                Number=Number/10;
             }
-            if(Count == 2)
-            {
-                Console.WriteLine("The number is prime number");
-            }
-            else
-            {
-                Console.WriteLine("The number is not a prime number");
-            }
-           
+            Console.WriteLine("The Reverse Number is = " + ReverseNmuber);
         }
     }
 }

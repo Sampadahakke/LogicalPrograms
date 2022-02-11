@@ -12,7 +12,8 @@ namespace LogicalPrograms
         {
             Console.WriteLine("=====================Logical Programs===================");
             LogicalProgram program = new LogicalProgram();
-            program.PrimeNumber();
+            //program.PrimeNumber();
+            program.ReverseNumber();
             Console.ReadLine(); 
         }
     }
