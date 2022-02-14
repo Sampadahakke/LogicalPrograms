@@ -14,7 +14,9 @@ namespace LogicalPrograms
             LogicalProgram program = new LogicalProgram();
             //program.PrimeNumber();
             //program.ReverseNumber();
-            program.FibonacciSeries();
+            //program.FibonacciSeries();
+            //program.CouponNumber();
+            program.PerfectNumber();
             Console.ReadLine(); 
         }
     }

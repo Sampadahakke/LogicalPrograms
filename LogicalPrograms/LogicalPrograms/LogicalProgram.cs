@@ -8,21 +8,27 @@ namespace LogicalPrograms
 {
     internal class LogicalProgram
     {
-        public void FibonacciSeries()
-        {
-            int FirstNumber = 0;
-            int SecondNumber = 1;
-            int sum;
-            Console.WriteLine("Welcome to Fibonacci Series");
-            Console.Write("Enter the number:");
-            int number = Convert.ToInt32(Console.ReadLine());
-            Console.Write("0 1 ");
-            for (int i = 2; i <= number; i++)
+         public  void PerfectNumber()
+         {
+            int SumOfDivisors=0;
+            Console.WriteLine("Welcome to Perfect Numbers");
+            Console.Write("Enter the number = ");
+            int number=Convert.ToInt32(Console.ReadLine());
+            for (int i=1;i<=number/2;i++)
             {
-                sum = FirstNumber + SecondNumber;
-                FirstNumber = SecondNumber;
-                SecondNumber = sum;
-                Console.Write(sum + " ");
+                if (number%i==0)
+                {
+                    SumOfDivisors += i;
+                    
+                }
+            }
+            if (SumOfDivisors == number)
+            {
+                Console.WriteLine("This is a perfect number");
+            }
+            else
+            {
+                Console.WriteLine("This is not a perfect number");
             }
         }
     }
