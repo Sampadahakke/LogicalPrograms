@@ -17,7 +17,8 @@ namespace LogicalPrograms
             //program.FibonacciSeries();
             //program.CouponNumber();
             //program.PerfectNumber();
-            program.StartWatch();
+            //program.StartWatch();
+            program.Generate();
             Console.ReadLine(); 
         }
     }

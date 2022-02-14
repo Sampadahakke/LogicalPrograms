@@ -10,36 +10,46 @@ namespace LogicalPrograms
 {
     internal class LogicalProgram
     {
+        private static Random random = new Random();
 
-        Stopwatch watch = new Stopwatch();  
-        private static int Yourchoice;
-
-        public  void StartWatch()
+        //Method to generate a coupon number
+        public static int getCoupon(int lengthStart, int lengthEnd)
         {
-            do
-            {
-                Console.WriteLine("1. Start\n2. Stop \n3. Elapsed \n4. Exit");
-                Console.Write("Enter Your Choice");
-                int Yourchoice = Convert.ToInt32(Console.ReadLine());
-                switch (Yourchoice)
-                {
-                    case 1:
-                        watch.Start();
-                        break;
-                    case 2:
-                        watch.Stop();
-                        break;
-                    case 3:
-                        double elapsedTime = Math.Round((double)watch.ElapsedMilliseconds / 1000, 2);
-                        Console.WriteLine("Elapsed Time is : " + elapsedTime + " Seconds");
-                        Console.ReadLine();
-                        break;
-                    default:
-                        break;
-                }
-
-            } while (Yourchoice < 3);
+            return random.Next(lengthStart, lengthEnd + 1);
         }
+
+        //Method to generate unique coupon number
+        public  void Generate()
+        {
+            int lengthStart, lengthEnd, couponCount, count = 0;
+
+            Console.Write("Enter the length start range for coupon number ");
+            lengthStart = int.Parse(Console.ReadLine());
+            Console.Write("Enter the length end range for coupon number ");
+            lengthEnd = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter how many distinct coupon number you want ");
+            couponCount = int.Parse(Console.ReadLine());
+
+            //HashSet is used to get unique coupon number
+            HashSet<int> coupon = new HashSet<int>();
+            while (coupon.Count < couponCount)
+            {
+                int randomNumber = getCoupon(lengthStart, lengthEnd);
+                coupon.Add(randomNumber);
+                count++;
+            }
+
+            //Display unique coupon number
+            foreach (int distinctCoupon in coupon)
+            {
+                Console.WriteLine("Distinct coupon number is " + distinctCoupon);
+            }
+            Console.WriteLine("Count to get distinct coupon number" + count);
+            Console.ReadLine();
+
+        }
+
     }
 
 }
