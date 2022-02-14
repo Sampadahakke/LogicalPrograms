@@ -8,19 +8,22 @@ namespace LogicalPrograms
 {
     internal class LogicalProgram
     {
-        public void ReverseNumber()
+        public void FibonacciSeries()
         {
-            int Reminder=0;
-            int ReverseNmuber=0;
-            Console.Write("Enter the number = ");
-            int Number=Convert.ToInt32(Console.ReadLine());
-            while(Number>0)
+            int FirstNumber = 0;
+            int SecondNumber = 1;
+            int sum;
+            Console.WriteLine("Welcome to Fibonacci Series");
+            Console.Write("Enter the number:");
+            int number = Convert.ToInt32(Console.ReadLine());
+            Console.Write("0 1 ");
+            for (int i = 2; i <= number; i++)
             {
-                Reminder=Number%10;
-                ReverseNmuber=(ReverseNmuber*10+Reminder);
-                Number=Number/10;
+                sum = FirstNumber + SecondNumber;
+                FirstNumber = SecondNumber;
+                SecondNumber = sum;
+                Console.Write(sum + " ");
             }
-            Console.WriteLine("The Reverse Number is = " + ReverseNmuber);
         }
     }
 }

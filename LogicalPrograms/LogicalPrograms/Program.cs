@@ -13,7 +13,8 @@ namespace LogicalPrograms
             Console.WriteLine("=====================Logical Programs===================");
             LogicalProgram program = new LogicalProgram();
             //program.PrimeNumber();
-            program.ReverseNumber();
+            //program.ReverseNumber();
+            program.FibonacciSeries();
             Console.ReadLine(); 
         }
     }
