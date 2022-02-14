@@ -1,35 +1,46 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace LogicalPrograms
 {
     internal class LogicalProgram
     {
-         public  void PerfectNumber()
-         {
-            int SumOfDivisors=0;
-            Console.WriteLine("Welcome to Perfect Numbers");
-            Console.Write("Enter the number = ");
-            int number=Convert.ToInt32(Console.ReadLine());
-            for (int i=1;i<=number/2;i++)
+
+        Stopwatch watch = new Stopwatch();  
+        private static int Yourchoice;
+
+        public  void StartWatch()
+        {
+            do
             {
-                if (number%i==0)
+                Console.WriteLine("1. Start\n2. Stop \n3. Elapsed \n4. Exit");
+                Console.Write("Enter Your Choice");
+                int Yourchoice = Convert.ToInt32(Console.ReadLine());
+                switch (Yourchoice)
                 {
-                    SumOfDivisors += i;
-                    
+                    case 1:
+                        watch.Start();
+                        break;
+                    case 2:
+                        watch.Stop();
+                        break;
+                    case 3:
+                        double elapsedTime = Math.Round((double)watch.ElapsedMilliseconds / 1000, 2);
+                        Console.WriteLine("Elapsed Time is : " + elapsedTime + " Seconds");
+                        Console.ReadLine();
+                        break;
+                    default:
+                        break;
                 }
-            }
-            if (SumOfDivisors == number)
-            {
-                Console.WriteLine("This is a perfect number");
-            }
-            else
-            {
-                Console.WriteLine("This is not a perfect number");
-            }
+
+            } while (Yourchoice < 3);
         }
     }
+
 }
+

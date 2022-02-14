@@ -16,7 +16,8 @@ namespace LogicalPrograms
             //program.ReverseNumber();
             //program.FibonacciSeries();
             //program.CouponNumber();
-            program.PerfectNumber();
+            //program.PerfectNumber();
+            program.StartWatch();
             Console.ReadLine(); 
         }
     }
